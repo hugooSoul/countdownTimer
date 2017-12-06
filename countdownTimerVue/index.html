@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Countdown Timer - @hugoosoul</title>
+  <script src="https://unpkg.com/vue"></script>
+  <script src="assets/main.js"></script>
+  <link rel="stylesheet" href="assets/main.css">
+</head>
+<body>
+
+  <div>
+    <h1>Countdown Time w/VueJS</h1>
+  </div>
+
+  <div id="app">
+     <countdown date="2017-12-31 23:59:00"></countdown>
+  </div>
+
+  <template id="countdown-scalable">
+    <div class="countdown">
+      <div class="block">
+        <p class="digit">{{ days | two_digits }}</p>
+        <p class="text">Days</p>
+      </div>
+      <div class="block">
+        <p class="digit">{{ hours | two_digits }}</p>
+        <p class="text">Hours</p>
+      </div>
+      <div class="block">
+        <p class="digit">{{ minutes | two_digits }}</p>
+        <p class="text">Minutes</p>
+      </div>
+      <div class="block">
+        <p class="digit">{{ seconds | two_digits }}</p>
+        <p class="text">Seconds</p>
+      </div>
+    </div>
+  </template>
+
+  <script>
+    new Vue({
+      el: '#app',
+    });
+  </script>
+
+</body>
+</html>
